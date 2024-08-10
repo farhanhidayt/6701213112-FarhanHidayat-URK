@@ -12,23 +12,28 @@
             var angka2 = parseFloat(document.getElementById('number2').value);
             var hasil;
 
-            // Lakukan operasi aritmatika berdasarkan pilihan operasi
-            if (operasi === "+") {
-                hasil = angka1 + angka2;
-            } else if (operasi === "-") {
-                hasil = angka1 - angka2;
-            } else if (operasi === "*") {
-                hasil = angka1 * angka2;
-            } else if (operasi === "/") {
-                if (angka2 !== 0) {
-                    hasil = angka1 / angka2;
-                } else {
-                    alert("Pembagian dengan nol tidak diperbolehkan!");
+            // Lakukan operasi aritmatika berdasarkan pilihan operasi menggunakan switch-case
+            switch (operasi) {
+                case "+":
+                    hasil = angka1 + angka2;
+                    break;
+                case "-":
+                    hasil = angka1 - angka2;
+                    break;
+                case "*":
+                    hasil = angka1 * angka2;
+                    break;
+                case "/":
+                    if (angka2 !== 0) {
+                        hasil = angka1 / angka2;
+                    } else {
+                        alert("Pembagian dengan nol tidak diperbolehkan!");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Operasi tidak valid!");
                     return;
-                }
-            } else {
-                alert("Operasi tidak valid!");
-                return;
             }
 
             // Tampilkan hasilnya
@@ -56,3 +61,4 @@
     </form>
 </body>
 </html>
+
